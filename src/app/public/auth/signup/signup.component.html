@@ -1,0 +1,90 @@
+<div [@pageTransition] class="bg-yellow-950 flex justify-center items-center pt-8">
+    <div class="card p-5 w-10/12 xl:w-1/2 grid grid-cols-1 md:grid-cols-2">
+        <div class="relative flex flex-col p-1 md:p-8">
+                <h2 class="text-lg  pb-2">
+                    Crear Cuenta
+                </h2>
+            <p class="text-xs">Ingresa tus credenciales para acceder a tu cuenta</p>
+            <div class="py-4">
+                <button type="button" class="text-sm border border-gray-100 px-5 py-3 rounded-lg w-full
+                 hover:bg-emerald-100 hover:border-emerald-100 transition-all ease-in-out duration-300">
+                    <i class="bi bi-google mr-1"></i>
+                    Iniciar Sesión con Google
+                </button>
+            </div>
+            <div class="grid grid-cols-5 items-center">
+                <div class="col-span-2">
+                    <hr>
+                </div>
+                <p class="text-center">or</p>
+                <div class="col-span-2">
+                    <hr>
+                </div>
+            </div>
+            <form class="my-5" (submit)="onFormSubmitHandler($event)">
+                <div class="form-group">
+                    <label class="form-label" for="username"
+                    >Nombre de Usuario</label>
+                    <div class="relative">
+                        <input type="text" id="username" class="form-control w-full ps-10"
+                            placeholder="Ingrese su nombre de usuario">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-person-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <div class="relative">
+                        <input type="email" id="email" class="form-control w-full ps-10"
+                            placeholder="Ingrese su email">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-envelope-at"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Contraseña</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="form-control w-full ps-10"
+                            placeholder="Ingrese su contraseña">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-shield-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="confirmpassword">Confirmar Contraseña</label>
+                    <div class="relative">
+                        <input type="password" id="confirmpassword" class="form-control w-full ps-10"
+                            placeholder="Ingrese su contraseña de nuevo">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-shield-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="my-5"></div>
+                <button type="submit" class="btn w-full bg-yellow-600 text-white" [disabled]="isLoading">
+                    <btn-spinner *ngIf="isLoading"></btn-spinner>
+                    Iniciar Sesión
+                </button>
+            </form>
+            <div class="text-sm text-gray-400">
+                <p>
+                    ¿Ya tienes una cuenta?
+                    <a [routerLink]="commonService.prepareRoute(publicRoutes.Signin)" class="text-emerald-600">
+                        Iniciar Sesión
+                    </a>
+                    Ahora.
+                </p>
+            </div>
+        </div>
+        <div class="md:block hidden text-white bg-yellow-700 rounded-lg p-8 xl:p-12">
+            <h2 class="text-lg xl:text-2xl pb-3">La forma más simple de gestionar tu inventario<br></h2>
+            <div class="py-3">
+                <img src={{signupbannerImage}} alt="login page image"
+                    class="border rounded-lg border-yellow-700 shadow">
+            </div>
+        </div>
+    </div>
+</div>
