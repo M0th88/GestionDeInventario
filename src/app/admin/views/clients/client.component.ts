@@ -54,8 +54,21 @@ export class ClientComponent {
   onModalCloseHandler(event: boolean) {
     this.showModal = event;
   }
-
+  nuevoCliente: IClient = {
+    id: this.clients.length + 1,
+    name: '',
+    ip: '',
+    pppoe: '',
+    price: 0
 
 }
+
+agregarCliente() {
+  const nuevoCliente = { ...this.nuevoCliente, id: this.clients.length + 1 };
+  this.clients.push(nuevoCliente);
+  this.nuevoCliente = { id: this.clients.length + 1, name: '', ip: '', pppoe: '', price: 0 };
+}
+}
+
 
 

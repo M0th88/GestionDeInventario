@@ -40,7 +40,7 @@
 /* table  */
 
 .ng-wind-table {
-  @apply w-full text-xs text-left text-gray-500;
+  @apply w-full text-xs text-left text-gray-500 ;
 }
 .ng-wind-table-header {
   @apply text-xs text-gray-700 uppercase bg-gray-50 z-50;

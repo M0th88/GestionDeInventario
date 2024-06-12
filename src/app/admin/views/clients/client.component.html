@@ -1,7 +1,19 @@
 <div class="card p-5 ">
    <div class="card-title">
-      <h3 class="text-xl font-bold leading-none mb-8">Listado de Clientes</h3>
+      <h3 class="text-2xl font-extrabold leading-none mb-8">Inventario de Libros</h3>
    </div>
+
+   <div class="mb-5">
+      <input type="text" (ngModel)="nuevoCliente.name" placeholder="Nombre del Cliente" class="mr-2 p-2 border rounded" />
+      <input type="text" (ngModel)="nuevoCliente.ip" placeholder="IP" class="mr-2 p-2 border rounded" />
+      <input type="text" (ngModel)="nuevoCliente.pppoe" placeholder="PPPoE" class="mr-2 p-2 border rounded" />
+      <input type="number" (ngModel)="nuevoCliente.price" placeholder="Precio" class="mr-2 p-2 border rounded" />
+      <button (click)="agregarCliente()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-full">
+        Buscar
+      </button>
+    </div>
+
+
    <div class="mt-3">
       <div class=" sm:rounded-lg">
          <div class="data-table">
@@ -10,7 +22,7 @@
                   <thead class="ng-wind-table-header">
                      <tr>
                         <th scope="col" class="ng-wind-header-item">
-                           Nombre
+                           Nombre del Libro
                            <button (click)="sortingUp()" *ngIf="shorting === false" class="ml-2 text-lg ">
                               <i class="bi bi-arrow-down-short"></i>
                            </button>
@@ -19,17 +31,18 @@
                            </button>
                         </th>
                         <th scope="col" class="ng-wind-header-item">
-                           Ip Antena
+                           Categoria
                         </th>
                         <th scope="col" class="ng-wind-header-item">
-                           user PPPoE
+                           Autor 
                         </th>
                         <th scope="col" class="ng-wind-header-item">
-                           Plan
+                           Precio
                         </th>
                         <th scope="col" class="ng-wind-header-item text-center">
                            Ubicacion
                         </th>
+                  
                      </tr>
                   </thead>
 
